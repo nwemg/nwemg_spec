@@ -24,7 +24,7 @@ protocol is little-endian (LE) regardless of the platform.
 An implementation was created for the protocol that adheres to the
 specification of the protocol and is presented in .
 
-Inspiration and Alternatives {#sec:inspalt}
+Inspiration and Alternatives
 ----------------------------
 
 Before designing a new protocol, a natural step was to look into
@@ -82,8 +82,7 @@ arrows in . State transfer requests are idempotent and illegal state
 transfers must always result in an error reply.
 
 ![The state machine representation of a session's
-state](figures/diagrams/Statemachine.png){#fig:statemachine
-width="0.99\\linewidth"}
+state](figures/diagrams/Statemachine.png)
 
 The following paragraphs describe the lifecycle of a session over the
 NWEmgprotocol.
@@ -178,7 +177,7 @@ constrain the protocol (at least in its current use case).
 The sequence numbers provided by the DTLS layer are not used (in upper
 layers), as NWEmgsessions are not bound to DTLS sessions.
 
-Message Types {#sec:msgtypes}
+Message Types
 -------------
 
 The protocol has two different kinds of messages, control messages, and
@@ -213,7 +212,7 @@ These messages must be sent from a client. When a client receives a
 client-initiated message, the result should be an *Invalid Message*
 error.
 
-#### InitRequest {#sec:initreq}
+#### InitRequest
 
     +------------------+---------------+-----------------------+
     | version: Version | no_items: u32 |  no_bytes_item: u32   |
@@ -326,7 +325,7 @@ reordering). This message type is specific to EMG processing, the
 action\_id field specifies the result of the classification, along with
 a corresponding velocity.
 
-#### DataGuaranteed {#sec:dataguaranteed}
+#### DataGuaranteed
 
 The message kind carrying data semi-reliably. This message kind is an
 optional element of implementations. The delivery of these messages is
